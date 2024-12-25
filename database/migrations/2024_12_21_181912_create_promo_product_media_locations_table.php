@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promo_inventories', function (Blueprint $table) {
+        Schema::create('promo_product_media_locations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('promo_products')->onDelete('cascade');
+            $table->foreignId('media_id')->constrained('promo_medias')->onDelete('cascade');
+            $table->integer('location_id');
+            $table->string('location_name');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promo_inventories');
+        Schema::dropIfExists('promo_media_locations');
     }
 };

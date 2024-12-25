@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promo_inventory_part_available_quantities', function (Blueprint $table) {
+        Schema::create('promo_product_inventories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('inventory_part_id')->constrained('promo_inventory_parts')->onDelete('cascade');
-            $table->string('uom');
-            $table->integer('value');
+            $table->foreignId('product_id')->constrained('promo_products')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promo_inventory_part_available_quantities');
+        Schema::dropIfExists('promo_inventories');
     }
 };

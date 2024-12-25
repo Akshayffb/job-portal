@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promo_media_locations', function (Blueprint $table) {
+        Schema::create('promo_product_media_class_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('media_id')->constrained('promo_medias')->onDelete('cascade');
-            $table->integer('location_id');
-            $table->string('location_name');
+            $table->integer('class_type_id');
+            $table->string('class_type_name');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promo_media_locations');
+        Schema::dropIfExists('promo_media_class_types');
     }
 };

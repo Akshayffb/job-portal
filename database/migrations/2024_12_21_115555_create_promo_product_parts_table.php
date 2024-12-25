@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('promo_product_parts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('promo_products')->onDelete('cascade');
             $table->string('part_id')->unique();
+            $table->foreignId('product_id')->constrained('promo_products')->onDelete('cascade');
             $table->text('description');
             $table->string('country_of_origin');
             $table->string('primary_material');

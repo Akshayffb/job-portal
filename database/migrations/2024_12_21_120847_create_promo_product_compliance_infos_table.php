@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('promo_product_compliance_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained('promo_products')->onDelete('cascade');
-            $table->text('compliance_Info');
+            $table->text('compliance_info');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promo_media_decorations', function (Blueprint $table) {
+        Schema::create('promo_product_media_decorations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('media_id')->constrained('promo_medias')->onDelete('cascade');
             $table->integer('decoration_id');
