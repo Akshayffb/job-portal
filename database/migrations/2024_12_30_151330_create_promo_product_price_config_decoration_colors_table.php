@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promo_product_fob_point_currency_supports', function (Blueprint $table) {
+        Schema::create('promo_product_price_config_decoration_colors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_fob_point_id')->constrained('promo_product_fob_points')->onDelete('cascade');
-            $table->string('currency');
+            $table->string('color_id');
+            $table->string('color_name');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promo_product_fob_point_currency_supports');
+        Schema::dropIfExists('promo_product_price_config_decoration_colors');
     }
 };
